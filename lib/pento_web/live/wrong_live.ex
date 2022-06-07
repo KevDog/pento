@@ -23,7 +23,7 @@ defmodule PentoWeb.WrongLive do
     DateTime.utc_now |> to_string
   end
 
-  def handle_event("guess", %{"number" => guess}= data, socket) do
+  def handle_event("guess", %{"number" => guess}= _data, socket) do
     message = "Your Guess: #{guess}. Wrong. Guess again. "
     time = time()
     score = socket.assigns.score - 1
